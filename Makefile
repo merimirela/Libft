@@ -6,7 +6,7 @@
 #    By: mmirela- <mmirela-@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/09 15:46:20 by mmirela-          #+#    #+#              #
-#    Updated: 2025/05/07 01:58:36 by mmirela-         ###   ########.fr        #
+#    Updated: 2025/05/08 23:21:19 by mmirela-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -76,19 +76,21 @@ BONUS_OBJS = $(BONUS_SRC:%.c=%.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJS) $(BONUS_OBJS)
+$(NAME): $(OBJS)
 	$(AR) $(NAME) $^
 
-bonus: $(OBJS) $(BONUS_OBJS)
+bonus : .bonus
+
+.bonus: $(OBJS) $(BONUS_OBJS)
 	$(AR) $(NAME) $^
+	touch .bonus
 
 clean:
-	$(RM) $(OBJS) $(BONUS_OBJS)
+	$(RM) $(OBJS) $(BONUS_OBJS) .bonus
 
 fclean: clean
-	$(RM) $(NAME)
+	$(RM) $(NAME) $(BONUS_OBJS)
 
-re: fclean all
+re: fclean all bonus
 
 .PHONY: all clean fclean re bonus
-	bonus: $(NAME)
