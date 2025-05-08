@@ -6,7 +6,7 @@
 /*   By: mmirela- <mmirela-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 15:47:04 by mmirela-          #+#    #+#             */
-/*   Updated: 2025/05/07 01:58:12 by mmirela-         ###   ########.fr       */
+/*   Updated: 2025/05/09 00:10:46 by mmirela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define LIBFT_H
 
 # include <stddef.h>
-# include <stdio.h> //remove for printf only
+//# include <stdio.h> //remove for printf only
 
 typedef struct s_list
 {
